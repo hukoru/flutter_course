@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import './product_manager.dart';
 import 'package:flutter/rendering.dart';
+import './pages/home.dart';
 
 //void main() => runApp(MyApp());
 void main() {
@@ -10,19 +11,13 @@ void main() {
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp( 
+    return MaterialApp(
       //debugShowMaterialGrid: true,
       theme: ThemeData(
-        brightness: Brightness.light,
-        primarySwatch: Colors.deepOrange,
-        accentColor: Colors.deepPurple
-      ),
-      home: Scaffold(
-        appBar: AppBar(
-          title: Text('커피 리스트'),
-        ),
-        body: ProductManager(startingProduct: '커피 테스터'),
-      ),
+          brightness: Brightness.light,
+          primarySwatch: Colors.deepOrange,
+          accentColor: Colors.deepPurple),
+      home: HomePage(),
     );
   }
 }
