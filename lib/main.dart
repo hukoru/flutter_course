@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import './product_manager.dart';
-import 'package:flutter/rendering.dart';
 import './pages/home.dart';
 
 //void main() => runApp(MyApp());
