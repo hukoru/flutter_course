@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+
 import './pages/product.dart';
 
 class Products extends StatelessWidget {
@@ -18,19 +19,20 @@ class Products extends StatelessWidget {
           ButtonBar(
             alignment: MainAxisAlignment.center,
             children: <Widget>[
-              RaisedButton(
+              FlatButton(
                 child: Text('Details'),
-                onPressed: () => Navigator.push<bool>(
-                      context,
-                      MaterialPageRoute(
-                        builder: (BuildContext context) => ProductPage(
-                            products[index]['title'],
-                            products[index]['image']),
-                      ),
-                    ).then((bool value){
-                      if( value ){
-                        deleteProduct(index);
-                      }
+                onPressed: () => Navigator
+                    .push<bool>(
+                  context,
+                  MaterialPageRoute(
+                    builder: (BuildContext context) => ProductPage(
+                        products[index]['title'], products[index]['image']),
+                  ),
+                )
+                    .then((bool value) {
+                  if (value) {
+                    deleteProduct(index);
+                  }
                 }),
               )
             ],
@@ -40,23 +42,22 @@ class Products extends StatelessWidget {
     );
   }
 
-  Widget _buildProductLists() {
-    Widget productCard;
-
+  Widget _buildProductList() {
+    Widget productCards;
     if (products.length > 0) {
-      productCard = ListView.builder(
+      productCards = ListView.builder(
         itemBuilder: _buildProductItem,
         itemCount: products.length,
       );
     } else {
-      productCard = Container();
+      productCards = Container();
     }
-
-    return productCard;
+    return productCards;
   }
 
   @override
   Widget build(BuildContext context) {
-    return _buildProductLists();
+    print('[Products Widget] build()');
+    return _buildProductList();
   }
 }
