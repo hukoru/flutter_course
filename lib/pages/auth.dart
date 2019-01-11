@@ -19,7 +19,7 @@ class _AuthPageState extends State<AuthPage> {
     return DecorationImage(
       fit: BoxFit.cover,
       colorFilter:
-          ColorFilter.mode(Colors.black.withOpacity(0.5), BlendMode.dstATop),
+          ColorFilter.mode(Colors.black.withOpacity(0.9), BlendMode.dstATop),
       image: AssetImage('assets/background.jpg'),
     );
   }
@@ -84,9 +84,7 @@ class _AuthPageState extends State<AuthPage> {
     final double deviceWidth = MediaQuery.of(context).size.width;
     final double targetWidth = deviceWidth > 550.0 ? 500.0 : deviceWidth * 0.95;
     return Scaffold(
-      appBar: AppBar(
-        title: Text('Login'),
-      ),
+      appBar: AppBar(title: Text('로그인')),
       body: Container(
         decoration: BoxDecoration(
           image: _buildBackgroundImage(),
@@ -111,7 +109,7 @@ class _AuthPageState extends State<AuthPage> {
                     ),
                     RaisedButton(
                       textColor: Colors.white,
-                      child: Text('LOGIN'),
+                      child: Text('로그인'),
                       onPressed: _submitForm,
                     ),
                   ],

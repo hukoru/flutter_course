@@ -32,7 +32,7 @@ class ProductsAdminPage extends StatelessWidget {
       child: Scaffold(
         drawer: _buildSideDrawer(context),
         appBar: AppBar(
-          title: Text('Manage Products'),
+          title: Text('사진 리스트'),
           bottom: TabBar(
             tabs: <Widget>[
               Tab(

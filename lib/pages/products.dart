@@ -29,7 +29,7 @@ class ProductsPage extends StatelessWidget {
     return Scaffold(
       drawer: _buildSideDrawer(context),
       appBar: AppBar(
-        title: Text('EasyList'),
+        title: Text('사진 리스트'),
         actions: <Widget>[
           IconButton(
             icon: Icon(Icons.favorite),
